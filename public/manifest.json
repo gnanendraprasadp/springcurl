@@ -1,6 +1,6 @@
 {
-  "short_name": "Certified Xebians",
-  "name": "A website for Certified Xebians",
+  "short_name": "Spring Curl",
+  "name": "An easy way to generate Spring Boot project using cURL Command",
   "icons": [
     {
       "src": "favicon.ico",

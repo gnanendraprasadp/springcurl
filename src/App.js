@@ -17,11 +17,23 @@ function App() {
   const [group, setGroup] = useState("com.example");
   const [artifact, setArtifact] = useState("demo");
   const [name, setName] = useState("demo");
-  const [description, setDescription] = useState("Demo project for Spring Boot");
-  const [packagename, setPackagename] = useState("com.example.demo");
+  const [description, setDescription] = useState(
+    "Demo project for Spring Boot"
+  );
+  const [packageName, setpackageName] = useState("com.example.demo");
+  const [applicationName, setApplicationName] = useState("DemoApplication");
+  const [applicationVersion, setApplicationVersion] =
+    useState("0.0.1-SNAPSHOT");
 
   return (
     <>
+      <Typography variant="h3" style={{ textAlign: "center" }} gutterBottom>
+        Spring cURL
+      </Typography>
+      <Typography variant="h6" style={{ textAlign: "center" }} gutterBottom>
+        An easy way to generate Spring Boot project using cURL Command
+      </Typography>
+      <br />
       <FormControl>
         <FormLabel
           id="output-format-radio-button-group"
@@ -49,7 +61,7 @@ function App() {
           />
         </RadioGroup>
       </FormControl>
-      &emsp;&emsp;
+      <br />
       <FormControl>
         <FormLabel
           id="project-radio-button-group"
@@ -82,7 +94,7 @@ function App() {
           />
         </RadioGroup>
       </FormControl>
-      &emsp;&emsp;
+      <br />
       <FormControl>
         <FormLabel
           id="language-radio-button-group"
@@ -115,7 +127,7 @@ function App() {
           />
         </RadioGroup>
       </FormControl>
-      &emsp;&emsp;
+      <br />
       <FormControl>
         <FormLabel
           id="packaging-radio-button-group"
@@ -143,7 +155,6 @@ function App() {
           />
         </RadioGroup>
       </FormControl>
-      <br />
       <br />
       <FormControl>
         <FormLabel
@@ -182,7 +193,7 @@ function App() {
           />
         </RadioGroup>
       </FormControl>
-      &emsp;&emsp;
+      <br />
       <FormControl>
         <FormLabel id="java-radio-button-group" focused={true} color="success">
           Java
@@ -219,6 +230,8 @@ function App() {
       <br />
       <br />
       <TextField
+        color="success"
+        style={{ width: "40%" }}
         id="outlined-basic"
         label="Group Id"
         variant="outlined"
@@ -228,6 +241,8 @@ function App() {
       <br />
       <br />
       <TextField
+        color="success"
+        style={{ width: "40%" }}
         id="outlined-basic"
         label="Artifact"
         variant="outlined"
@@ -237,6 +252,8 @@ function App() {
       <br />
       <br />
       <TextField
+        color="success"
+        style={{ width: "40%" }}
         id="outlined-basic"
         label="Name"
         variant="outlined"
@@ -246,6 +263,8 @@ function App() {
       <br />
       <br />
       <TextField
+        color="success"
+        style={{ width: "40%" }}
         id="outlined-basic"
         label="Description"
         variant="outlined"
@@ -255,22 +274,62 @@ function App() {
       <br />
       <br />
       <TextField
+        color="success"
+        style={{ width: "40%" }}
         id="outlined-basic"
         label="Package name"
         variant="outlined"
-        value={packagename}
-        onChange={(event) => setPackagename(event.target.value)}
+        value={packageName}
+        onChange={(event) => setpackageName(event.target.value)}
       />
       <br />
       <br />
+      <TextField
+        color="success"
+        style={{ width: "40%" }}
+        id="outlined-basic"
+        label="Application Name"
+        variant="outlined"
+        value={applicationName}
+        onChange={(event) => setApplicationName(event.target.value)}
+      />
+      <br />
+      <br />
+      <TextField
+        color="success"
+        style={{ width: "40%" }}
+        id="outlined-basic"
+        label="Application Version"
+        variant="outlined"
+        value={applicationVersion}
+        onChange={(event) => setApplicationVersion(event.target.value)}
+      />
+      <br />
+      <br />
+      <Typography variant="h6" style={{ fontWeight: "bold" }} gutterBottom>
+        Your cURL Command is
+      </Typography>
       <Typography variant="subtitle1" gutterBottom>
         curl -G{" "}
         {format === "zip"
           ? "https://start.spring.io/starter.zip"
           : "https://start.spring.io/starter.tgz"}{" "}
-        -d type={project} -d language={language} -d springboot={springboot} -d
-        packaging={packaging} -d javaversion={java}{" "}
-        {format === "zip" ? "-o output.zip" : "-d baseDir=my-dir | tar -xzvf -"}
+        -d type={project} -d language={language} -d packaging={packaging} -d
+        bootVersion={springboot} -d javaVersion={java} -d applicationName=
+        {applicationName} -d artifactId={artifact} -d dependencies=web,data-jpa{" "}
+        -d description={encodeURIComponent(description.trim())} -d groupId=
+        {group} -d name={name} -d packageName={packageName} -d version=
+        {applicationVersion}{" "}
+        {format === "zip"
+          ? "-o " + artifact + ".zip"
+          : "-d baseDir=" + artifact + " | tar -xzvf -"}
+      </Typography>
+      <Typography
+        variant="body1"
+        style={{ textAlign: "center", fontWeight: "bold" }}
+        gutterBottom
+      >
+        Developed by Gnaad
       </Typography>
     </>
   );
