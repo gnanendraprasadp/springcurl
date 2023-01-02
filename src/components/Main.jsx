@@ -1,3 +1,5 @@
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
@@ -5,9 +7,9 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
+import React, { useState } from "react";
 
-function App() {
+function Main() {
   const [format, setFormat] = useState("zip");
   const [project, setProject] = useState("gradle-project *");
   const [language, setLanguage] = useState("java");
@@ -26,14 +28,8 @@ function App() {
     useState("0.0.1-SNAPSHOT");
 
   return (
-    <>
-      <Typography variant="h3" style={{ textAlign: "center" }} gutterBottom>
-        Spring cURL
-      </Typography>
-      <Typography variant="h6" style={{ textAlign: "center" }} gutterBottom>
-        An easy way to generate Spring Boot project using cURL Command
-      </Typography>
-      <br />
+    <div style={{ padding: "2.5%" }}>
+      {/* Output Format */}
       <FormControl>
         <FormLabel
           id="output-format-radio-button-group"
@@ -62,6 +58,7 @@ function App() {
         </RadioGroup>
       </FormControl>
       <br />
+      {/* Project */}
       <FormControl>
         <FormLabel
           id="project-radio-button-group"
@@ -95,6 +92,7 @@ function App() {
         </RadioGroup>
       </FormControl>
       <br />
+      {/* Language */}
       <FormControl>
         <FormLabel
           id="language-radio-button-group"
@@ -128,6 +126,7 @@ function App() {
         </RadioGroup>
       </FormControl>
       <br />
+      {/* Packaging */}
       <FormControl>
         <FormLabel
           id="packaging-radio-button-group"
@@ -156,6 +155,7 @@ function App() {
         </RadioGroup>
       </FormControl>
       <br />
+      {/* Springboot */}
       <FormControl>
         <FormLabel
           id="springboot-radio-button-group"
@@ -194,6 +194,7 @@ function App() {
         </RadioGroup>
       </FormControl>
       <br />
+      {/* Java */}
       <FormControl>
         <FormLabel id="java-radio-button-group" focused={true} color="success">
           Java
@@ -231,7 +232,7 @@ function App() {
       <br />
       <TextField
         color="success"
-        style={{ width: "40%" }}
+        style={{ width: "70%" }}
         id="outlined-basic"
         label="Group Id"
         variant="outlined"
@@ -242,7 +243,7 @@ function App() {
       <br />
       <TextField
         color="success"
-        style={{ width: "40%" }}
+        style={{ width: "70%" }}
         id="outlined-basic"
         label="Artifact"
         variant="outlined"
@@ -253,7 +254,7 @@ function App() {
       <br />
       <TextField
         color="success"
-        style={{ width: "40%" }}
+        style={{ width: "70%" }}
         id="outlined-basic"
         label="Name"
         variant="outlined"
@@ -264,7 +265,7 @@ function App() {
       <br />
       <TextField
         color="success"
-        style={{ width: "40%" }}
+        style={{ width: "70%" }}
         id="outlined-basic"
         label="Description"
         variant="outlined"
@@ -275,7 +276,7 @@ function App() {
       <br />
       <TextField
         color="success"
-        style={{ width: "40%" }}
+        style={{ width: "70%" }}
         id="outlined-basic"
         label="Package name"
         variant="outlined"
@@ -286,7 +287,7 @@ function App() {
       <br />
       <TextField
         color="success"
-        style={{ width: "40%" }}
+        style={{ width: "70%" }}
         id="outlined-basic"
         label="Application Name"
         variant="outlined"
@@ -297,7 +298,7 @@ function App() {
       <br />
       <TextField
         color="success"
-        style={{ width: "40%" }}
+        style={{ width: "70%" }}
         id="outlined-basic"
         label="Application Version"
         variant="outlined"
@@ -309,30 +310,52 @@ function App() {
       <Typography variant="h6" style={{ fontWeight: "bold" }} gutterBottom>
         Your cURL Command is
       </Typography>
-      <Typography variant="subtitle1" gutterBottom>
-        curl -G{" "}
-        {format === "zip"
-          ? "https://start.spring.io/starter.zip"
-          : "https://start.spring.io/starter.tgz"}{" "}
-        -d type={project} -d language={language} -d packaging={packaging} -d
-        bootVersion={springboot} -d javaVersion={java} -d applicationName=
-        {applicationName} -d artifactId={artifact} -d dependencies=web,data-jpa{" "}
-        -d description={encodeURIComponent(description.trim())} -d groupId=
-        {group} -d name={name} -d packageName={packageName} -d version=
-        {applicationVersion}{" "}
-        {format === "zip"
-          ? "-o " + artifact + ".zip"
-          : "-d baseDir=" + artifact + " | tar -xzvf -"}
-      </Typography>
+      <Card
+        sx={{ minWidth: 275 }}
+        style={{
+          marginLeft: "4%",
+          marginRight: "4%",
+          paddingTop: "0%",
+          paddingBottom: "0%",
+          color: "#fff",
+          background: "#000",
+        }}
+      >
+        <CardContent>
+          <Typography variant="subtitle1" gutterBottom>
+            curl -G{" "}
+            {format === "zip"
+              ? "https://start.spring.io/starter.zip"
+              : "https://start.spring.io/starter.tgz"}{" "}
+            -d type={project} -d language={language} -d packaging={packaging} -d
+            bootVersion={springboot} -d javaVersion={java} -d applicationName=
+            {applicationName} -d artifactId={artifact} -d
+            dependencies=web,data-jpa -d description=
+            {encodeURIComponent(description.trim())} -d groupId=
+            {group} -d name={name} -d packageName={packageName} -d version=
+            {applicationVersion}{" "}
+            {format === "zip"
+              ? "-o " + artifact + ".zip"
+              : "-d baseDir=" + artifact + " | tar -xzvf -"}
+          </Typography>
+        </CardContent>
+      </Card>
+      <br />
       <Typography
         variant="body1"
         style={{ textAlign: "center", fontWeight: "bold" }}
         gutterBottom
       >
-        Developed by Gnaad
+        Developed by{" "}
+        <a
+          style={{ color: "#000000" }}
+          href="https://github.com/gnanendraprasadp"
+        >
+          Gnaad
+        </a>
       </Typography>
-    </>
+    </div>
   );
 }
 
-export default App;
+export default Main;
