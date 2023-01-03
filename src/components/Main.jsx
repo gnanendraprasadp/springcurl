@@ -8,7 +8,6 @@ import OutputType from "./radiogroup/OutputType";
 import Packaging from "./radiogroup/Packaging";
 import Project from "./radiogroup/Project";
 import SpringBoot from "./radiogroup/SpringBoot";
-import Dropdown from "./select/Dropdown";
 import TextInput from "./textfield/TextInput";
 
 function Main() {
@@ -105,9 +104,6 @@ function Main() {
         onChange={(event) => setApplicationVersion(event.target.value)}
       />
 
-      <br />
-      <br />
-      <Dropdown />
       <br />
       <br />
       <Typography variant="h6" style={{ fontWeight: "bold" }} gutterBottom>
