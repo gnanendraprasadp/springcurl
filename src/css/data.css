@@ -1,0 +1,20 @@
+.appbar {
+  text-align: center;
+  padding: 0%;
+}
+
+.hyperlink-white {
+  color: #ffffff;
+}
+
+.hyperlink-black {
+  color: #000000;
+}
+
+.main-padding {
+  padding: 2.5%;
+}
+
+.textfield{
+  width: 70%;
+}

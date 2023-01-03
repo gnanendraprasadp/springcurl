@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "type": "hierarchical-multi-select",
-    "values": [
+    "data": [
       {
         "name": "Developer Tools",
         "values": [
@@ -1548,58 +1547,44 @@
       }
     ]
   },
-  "type": {
-    "type": "action",
-    "default": "gradle-project",
+  "outputType": {
     "values": [
       {
-        "id": "gradle-project",
+        "id": "zip",
+        "name": "Zip"
+      },
+      {
+        "id": "tgz",
+        "name": "Tgz"
+      }
+    ]
+  },
+  "projectType": {
+    "values": [
+      {
+        "id": "gradle-project *",
         "name": "Gradle - Groovy",
-        "description": "Generate a Gradle based project archive using the Groovy DSL.",
-        "action": "/starter.zip",
-        "tags": { "build": "gradle", "dialect": "groovy", "format": "project" }
+        "description": "Generate a Gradle based project archive using the Groovy DSL."
       },
       {
         "id": "gradle-project-kotlin",
         "name": "Gradle - Kotlin",
-        "description": "Generate a Gradle based project archive using the Kotlin DSL.",
-        "action": "/starter.zip",
-        "tags": { "build": "gradle", "dialect": "kotlin", "format": "project" }
-      },
-      {
-        "id": "gradle-build",
-        "name": "Gradle Config",
-        "description": "Generate a Gradle build file.",
-        "action": "/build.gradle",
-        "tags": { "build": "gradle", "format": "build" }
+        "description": "Generate a Gradle based project archive using the Kotlin DSL."
       },
       {
         "id": "maven-project",
         "name": "Maven",
-        "description": "Generate a Maven based project archive.",
-        "action": "/starter.zip",
-        "tags": { "build": "maven", "format": "project" }
-      },
-      {
-        "id": "maven-build",
-        "name": "Maven POM",
-        "description": "Generate a Maven pom.xml.",
-        "action": "/pom.xml",
-        "tags": { "build": "maven", "format": "build" }
+        "description": "Generate a Maven based project archive."
       }
     ]
   },
   "packaging": {
-    "type": "single-select",
-    "default": "jar",
     "values": [
       { "id": "jar", "name": "Jar" },
       { "id": "war", "name": "War" }
     ]
   },
   "javaVersion": {
-    "type": "single-select",
-    "default": "17",
     "values": [
       { "id": "19", "name": "19" },
       { "id": "17", "name": "17" },
@@ -1608,8 +1593,6 @@
     ]
   },
   "language": {
-    "type": "single-select",
-    "default": "java",
     "values": [
       { "id": "java", "name": "Java" },
       { "id": "kotlin", "name": "Kotlin" },
@@ -1617,19 +1600,11 @@
     ]
   },
   "bootVersion": {
-    "type": "single-select",
-    "default": "3.0.1",
     "values": [
       { "id": "3.0.2-SNAPSHOT", "name": "3.0.2 (SNAPSHOT)" },
       { "id": "3.0.1", "name": "3.0.1" },
       { "id": "2.7.8-SNAPSHOT", "name": "2.7.8 (SNAPSHOT)" },
       { "id": "2.7.7", "name": "2.7.7" }
     ]
-  },
-  "groupId": { "type": "text", "default": "com.example" },
-  "artifactId": { "type": "text", "default": "demo" },
-  "version": { "type": "text", "default": "0.0.1-SNAPSHOT" },
-  "name": { "type": "text", "default": "demo" },
-  "description": { "type": "text", "default": "Demo project for Spring Boot" },
-  "packageName": { "type": "text", "default": "com.example.demo" }
+  }
 }

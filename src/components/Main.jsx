@@ -1,13 +1,15 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import FormControl from "@mui/material/FormControl";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormLabel from "@mui/material/FormLabel";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import React, { useState } from "react";
+import Java from "./radiogroup/Java";
+import Language from "./radiogroup/Language";
+import OutputType from "./radiogroup/OutputType";
+import Packaging from "./radiogroup/Packaging";
+import Project from "./radiogroup/Project";
+import SpringBoot from "./radiogroup/SpringBoot";
+import Dropdown from "./select/Dropdown";
+import TextInput from "./textfield/TextInput";
 
 function Main() {
   const [format, setFormat] = useState("zip");
@@ -28,283 +30,84 @@ function Main() {
     useState("0.0.1-SNAPSHOT");
 
   return (
-    <div style={{ padding: "2.5%" }}>
-      {/* Output Format */}
-      <FormControl>
-        <FormLabel
-          id="output-format-radio-button-group"
-          focused={true}
-          color="success"
-        >
-          Output Format
-        </FormLabel>
-        <RadioGroup
-          row
-          name="output-format"
-          aria-labelledby="output-format-radio-button-group"
-          value={format}
-          onChange={(event) => setFormat(event.target.value)}
-        >
-          <FormControlLabel
-            value="zip"
-            control={<Radio color="success" />}
-            label="Zip"
-          />
-          <FormControlLabel
-            value="tgz"
-            control={<Radio color="success" />}
-            label="Tgz"
-          />
-        </RadioGroup>
-      </FormControl>
+    <div className="main-padding">
+      <OutputType format={format} setFormat={setFormat} />
       <br />
-      {/* Project */}
-      <FormControl>
-        <FormLabel
-          id="project-radio-button-group"
-          focused={true}
-          color="success"
-        >
-          Project
-        </FormLabel>
-        <RadioGroup
-          row
-          name="project"
-          aria-labelledby="project-radio-button-group"
-          value={project}
-          onChange={(event) => setProject(event.target.value)}
-        >
-          <FormControlLabel
-            value="gradle-project *"
-            control={<Radio color="success" />}
-            label="Gradle - Groovy"
-          />
-          <FormControlLabel
-            value="gradle-project-kotlin"
-            control={<Radio color="success" />}
-            label="Gradle - Kotlin"
-          />
-          <FormControlLabel
-            value="maven-project"
-            control={<Radio color="success" />}
-            label="Maven"
-          />
-        </RadioGroup>
-      </FormControl>
+      <Project project={project} setProject={setProject} />
       <br />
-      {/* Language */}
-      <FormControl>
-        <FormLabel
-          id="language-radio-button-group"
-          focused={true}
-          color="success"
-        >
-          Language
-        </FormLabel>
-        <RadioGroup
-          row
-          name="language"
-          aria-labelledby="language-radio-button-group"
-          value={language}
-          onChange={(event) => setLanguage(event.target.value)}
-        >
-          <FormControlLabel
-            value="java"
-            control={<Radio color="success" />}
-            label="Java"
-          />
-          <FormControlLabel
-            value="kotlin"
-            control={<Radio color="success" />}
-            label="Kotlin"
-          />
-          <FormControlLabel
-            value="groovy"
-            control={<Radio color="success" />}
-            label="Groovy"
-          />
-        </RadioGroup>
-      </FormControl>
+      <Language language={language} setLanguage={setLanguage} />
       <br />
-      {/* Packaging */}
-      <FormControl>
-        <FormLabel
-          id="packaging-radio-button-group"
-          focused={true}
-          color="success"
-        >
-          Packaging
-        </FormLabel>
-        <RadioGroup
-          row
-          name="packaging"
-          aria-labelledby="packaging-radio-button-group"
-          value={packaging}
-          onChange={(event) => setPackaging(event.target.value)}
-        >
-          <FormControlLabel
-            value="jar"
-            control={<Radio color="success" />}
-            label="Jar"
-          />
-          <FormControlLabel
-            value="war"
-            control={<Radio color="success" />}
-            label="War"
-          />
-        </RadioGroup>
-      </FormControl>
+      <Packaging packaging={packaging} setPackaging={setPackaging} />
       <br />
-      {/* Springboot */}
-      <FormControl>
-        <FormLabel
-          id="springboot-radio-button-group"
-          focused={true}
-          color="success"
-        >
-          Springboot
-        </FormLabel>
-        <RadioGroup
-          row
-          name="springboot"
-          aria-labelledby="springboot-radio-button-group"
-          value={springboot}
-          onChange={(event) => setSpringboot(event.target.value)}
-        >
-          <FormControlLabel
-            value="3.0.2 (SNAPSHOT)"
-            control={<Radio color="success" />}
-            label="3.0.2 (SNAPSHOT)"
-          />
-          <FormControlLabel
-            value="3.0.1"
-            control={<Radio color="success" />}
-            label="3.0.1"
-          />
-          <FormControlLabel
-            value="2.7.8 (SNAPSHOT)"
-            control={<Radio color="success" />}
-            label="2.7.8 (SNAPSHOT)"
-          />
-          <FormControlLabel
-            value="2.7.7"
-            control={<Radio color="success" />}
-            label="2.7.7"
-          />
-        </RadioGroup>
-      </FormControl>
+      <SpringBoot springboot={springboot} setSpringboot={setSpringboot} />
       <br />
-      {/* Java */}
-      <FormControl>
-        <FormLabel id="java-radio-button-group" focused={true} color="success">
-          Java
-        </FormLabel>
-        <RadioGroup
-          row
-          name="java"
-          aria-labelledby="java-radio-button-group"
-          value={java}
-          onChange={(event) => setJava(event.target.value)}
-        >
-          <FormControlLabel
-            value="19"
-            control={<Radio color="success" />}
-            label="19"
-          />
-          <FormControlLabel
-            value="17"
-            control={<Radio color="success" />}
-            label="17"
-          />
-          <FormControlLabel
-            value="11"
-            control={<Radio color="success" />}
-            label="11"
-          />
-          <FormControlLabel
-            value="8"
-            control={<Radio color="success" />}
-            label="8"
-          />
-        </RadioGroup>
-      </FormControl>
+      <Java java={java} setJava={setJava} />
       <br />
       <br />
-      <TextField
-        color="success"
-        style={{ width: "70%" }}
-        id="outlined-basic"
+
+      <TextInput
         label="Group Id"
-        variant="outlined"
         value={group}
         onChange={(event) => setGroup(event.target.value)}
       />
+
       <br />
       <br />
-      <TextField
-        color="success"
-        style={{ width: "70%" }}
-        id="outlined-basic"
+
+      <TextInput
         label="Artifact"
-        variant="outlined"
         value={artifact}
         onChange={(event) => setArtifact(event.target.value)}
       />
+
       <br />
       <br />
-      <TextField
-        color="success"
-        style={{ width: "70%" }}
-        id="outlined-basic"
+
+      <TextInput
         label="Name"
-        variant="outlined"
         value={name}
         onChange={(event) => setName(event.target.value)}
-      />{" "}
+      />
+
       <br />
       <br />
-      <TextField
-        color="success"
-        style={{ width: "70%" }}
-        id="outlined-basic"
+
+      <TextInput
         label="Description"
-        variant="outlined"
         value={description}
         onChange={(event) => setDescription(event.target.value)}
       />
+
       <br />
       <br />
-      <TextField
-        color="success"
-        style={{ width: "70%" }}
-        id="outlined-basic"
+
+      <TextInput
         label="Package name"
-        variant="outlined"
         value={packageName}
         onChange={(event) => setpackageName(event.target.value)}
       />
+
       <br />
       <br />
-      <TextField
-        color="success"
-        style={{ width: "70%" }}
-        id="outlined-basic"
+
+      <TextInput
         label="Application Name"
-        variant="outlined"
         value={applicationName}
         onChange={(event) => setApplicationName(event.target.value)}
       />
+
       <br />
       <br />
-      <TextField
-        color="success"
-        style={{ width: "70%" }}
-        id="outlined-basic"
+
+      <TextInput
         label="Application Version"
-        variant="outlined"
         value={applicationVersion}
         onChange={(event) => setApplicationVersion(event.target.value)}
       />
+
+      <br />
+      <br />
+      <Dropdown />
       <br />
       <br />
       <Typography variant="h6" style={{ fontWeight: "bold" }} gutterBottom>
