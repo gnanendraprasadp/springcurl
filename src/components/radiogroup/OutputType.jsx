@@ -13,7 +13,7 @@ const FormLabelUtils = ({ format, setFormat }) => {
         <FormLabel
           id="output-format-radio-button-group"
           focused={true}
-          color="success"
+          style={{color:"#000"}}
         >
           Output Format
         </FormLabel>
@@ -28,7 +28,7 @@ const FormLabelUtils = ({ format, setFormat }) => {
             <FormControlLabel
               key={index}
               value={data.id}
-              control={<Radio color="success" />}
+              control={<Radio style={{color:"#000"}} />}
               label={data.name}
             />
           ))}

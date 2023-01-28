@@ -13,7 +13,7 @@ const Packaging = ({ packaging, setPackaging }) => {
         <FormLabel
           id="packaging-radio-button-group"
           focused={true}
-          color="success"
+          style={{color:"#000"}}
         >
           Packaging
         </FormLabel>
@@ -28,7 +28,7 @@ const Packaging = ({ packaging, setPackaging }) => {
             <FormControlLabel
               key={index}
               value={data.id}
-              control={<Radio color="success" />}
+              control={<Radio style={{color:"#000"}} />}
               label={data.name}
             />
           ))}

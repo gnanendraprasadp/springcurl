@@ -11,7 +11,7 @@ const Java = ({ java, setJava }) => {
   return (
     <>
       <FormControl>
-        <FormLabel id="java-radio-button-group" focused={true} color="success">
+        <FormLabel id="java-radio-button-group" focused={true} style={{color:"#000"}}>
           Java
         </FormLabel>
         <RadioGroup
@@ -25,7 +25,7 @@ const Java = ({ java, setJava }) => {
             <FormControlLabel
               key={index}
               value={data.id}
-              control={<Radio color="success" />}
+              control={<Radio  style={{color:"#000"}}/>}
               label={data.name}
             />
           ))}

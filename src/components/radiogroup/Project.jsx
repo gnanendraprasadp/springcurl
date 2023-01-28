@@ -13,7 +13,7 @@ const Project = ({ project, setProject }) => {
         <FormLabel
           id="project-radio-button-group"
           focused={true}
-          color="success"
+          style={{color:"#000"}}
         >
           Project
         </FormLabel>
@@ -28,7 +28,7 @@ const Project = ({ project, setProject }) => {
             <FormControlLabel
               key={index}
               value={data.id}
-              control={<Radio color="success" />}
+              control={<Radio style={{color:"#000"}} />}
               label={data.name}
             />
           ))}
