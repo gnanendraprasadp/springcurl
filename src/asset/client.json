@@ -1601,10 +1601,10 @@
   },
   "bootVersion": {
     "values": [
-      { "id": "3.0.2-SNAPSHOT", "name": "3.0.2 (SNAPSHOT)" },
-      { "id": "3.0.1", "name": "3.0.1" },
-      { "id": "2.7.8-SNAPSHOT", "name": "2.7.8 (SNAPSHOT)" },
-      { "id": "2.7.7", "name": "2.7.7" }
+      { "id": "3.0.3-SNAPSHOT", "name": "3.0.3 (SNAPSHOT)" },
+      { "id": "3.0.2", "name": "3.0.2" },
+      { "id": "2.7.9-SNAPSHOT", "name": "2.7.9 (SNAPSHOT)" },
+      { "id": "2.7.8", "name": "2.7.8" }
     ]
   }
 }

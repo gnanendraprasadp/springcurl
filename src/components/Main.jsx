@@ -16,7 +16,7 @@ function Main() {
   const [format, setFormat] = useState("zip");
   const [project, setProject] = useState("gradle-project *");
   const [language, setLanguage] = useState("java");
-  const [springboot, setSpringboot] = useState("3.0.1");
+  const [springboot, setSpringboot] = useState("3.0.2");
   const [packaging, setPackaging] = useState("jar");
   const [java, setJava] = useState("17");
   const [group, setGroup] = useState("com.example");
@@ -68,6 +68,7 @@ function Main() {
               value={packageName}
               onChange={(event) => setpackageName(event.target.value)}
             />
+
           </Grid>
 
           <Grid xs={12} md={12} lg={12}>
