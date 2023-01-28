@@ -5,14 +5,16 @@ const TextInput = ({ label, value, onChange }) => {
   return (
     <>
       <TextField
+        fullWidth
         color="success"
-        className="textfield"
         id="outlined-basic"
         label={label}
         variant="outlined"
         value={value}
         onChange={onChange}
       />
+      <br />
+      <br />
     </>
   );
 };

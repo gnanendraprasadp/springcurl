@@ -34,6 +34,7 @@ const Project = ({ project, setProject }) => {
           ))}
         </RadioGroup>
       </FormControl>
+      <br />
     </>
   );
 };

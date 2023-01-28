@@ -34,6 +34,7 @@ const Language = ({ language, setLanguage }) => {
           ))}
         </RadioGroup>
       </FormControl>
+      <br />
     </>
   );
 };

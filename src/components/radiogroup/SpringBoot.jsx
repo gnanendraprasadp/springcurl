@@ -34,6 +34,7 @@ const SpringBoot = ({ springboot, setSpringboot }) => {
           ))}
         </RadioGroup>
       </FormControl>
+      <br />
     </>
   );
 };

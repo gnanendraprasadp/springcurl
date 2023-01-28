@@ -34,6 +34,7 @@ const Packaging = ({ packaging, setPackaging }) => {
           ))}
         </RadioGroup>
       </FormControl>
+      <br />
     </>
   );
 };

@@ -34,6 +34,7 @@ const FormLabelUtils = ({ format, setFormat }) => {
           ))}
         </RadioGroup>
       </FormControl>
+      <br />
     </>
   );
 };

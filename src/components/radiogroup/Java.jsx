@@ -31,6 +31,8 @@ const Java = ({ java, setJava }) => {
           ))}
         </RadioGroup>
       </FormControl>
+      <br />
+      <br />
     </>
   );
 };
