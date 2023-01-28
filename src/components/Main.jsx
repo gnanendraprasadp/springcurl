@@ -10,7 +10,6 @@ import OutputType from "./radiogroup/OutputType";
 import Packaging from "./radiogroup/Packaging";
 import Project from "./radiogroup/Project";
 import SpringBoot from "./radiogroup/SpringBoot";
-import Dependencies from "./select/Dependencies";
 import TextInput from "./textfield/TextInput";
 
 function Main() {
@@ -69,9 +68,6 @@ function Main() {
               value={packageName}
               onChange={(event) => setpackageName(event.target.value)}
             />
-
-          {/* <Dependencies/> */}
-            
           </Grid>
 
           <Grid xs={12} md={12} lg={12}>

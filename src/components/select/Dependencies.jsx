@@ -44,9 +44,8 @@ export default function MultipleSelectCheckmarks() {
   return (
     <div>
       <FormControl sx={{ width: 600 }}>
-        <InputLabel id="demo-multiple-checkbox-label">Dependency</InputLabel>
+        <InputLabel id="demo-multiple-checkbox-label">Dependencies</InputLabel>
         <Select
-          fullWidth
           multiple
           value={personName}
           onChange={handleChange}
