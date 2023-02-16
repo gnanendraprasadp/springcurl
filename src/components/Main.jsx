@@ -1,5 +1,6 @@
-import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
+import { CopyBlock, dracula } from "react-code-blocks";
 import Dependencies from "./Dependencies";
 import Java from "./Java";
 import Language from "./Language";
@@ -22,6 +23,47 @@ function Main() {
   const [description, setDescription] = useState("Spring Boot by cURL");
   const [packageName, setPackageName] = useState("com.example.demo");
   const [dependency, setDependency] = useState("");
+
+  const first = "curl -G";
+  let format_curl = ` ${
+    format === "zip"
+      ? "https://start.spring.io/starter.zip"
+      : "https://start.spring.io/starter.tgz"
+  }`;
+  let type_curl = ` -d type=${project}`;
+  let language_curl = ` -d language=${language}`;
+  let packaging_curl = ` -d packaging=${packaging}`;
+  let bootVersion_curl = ` -d bootVersion=${springboot}`;
+  let java_curl = ` -d javaVersion=${java}`;
+  let artifact_curl = ` -d artifactId=${artifact}`;
+  let dependency_curl = ` -d dependencies=${dependency}`;
+  let description_curl = ` -d description=${encodeURIComponent(
+    description.trim()
+  )}`;
+  let groupId_curl = ` -d groupId=${group}`;
+  let name_curl = ` -d name=${name}`;
+  let packageName_curl = ` -d packageName=${packageName}`;
+  let output_curl = `${
+    format === "zip"
+      ? " -o " + artifact + ".zip"
+      : " -d baseDir=" + artifact + " | tar -xzvf -"
+  }`;
+
+  let curlCommand =
+    first +
+    format_curl +
+    type_curl +
+    language_curl +
+    packaging_curl +
+    bootVersion_curl +
+    java_curl +
+    artifact_curl +
+    dependency_curl +
+    description_curl +
+    groupId_curl +
+    name_curl +
+    packageName_curl +
+    output_curl;
 
   return (
     <>
@@ -80,32 +122,14 @@ function Main() {
             </Typography>
             <br />
 
-            <Card
-              sx={{ minWidth: 275 }}
-              style={{
-                color: "#fff",
-                background: "#000",
-                marginTop: "0.75%",
-              }}
-            >
-              <CardContent>
-                <Typography variant="subtitle1">
-                  curl -G{" "}
-                  {format === "zip"
-                    ? "https://start.spring.io/starter.zip"
-                    : "https://start.spring.io/starter.tgz"}{" "}
-                  -d type={project} -d language={language} -d packaging=
-                  {packaging} -d bootVersion={springboot} -d javaVersion={java}{" "}
-                  -d artifactId={artifact} -d dependencies={dependency} -d
-                  description=
-                  {encodeURIComponent(description.trim())} -d groupId=
-                  {group} -d name={name} -d packageName={packageName}{" "}
-                  {format === "zip"
-                    ? "-o " + artifact + ".zip"
-                    : "-d baseDir=" + artifact + " | tar -xzvf -"}
-                </Typography>
-              </CardContent>
-            </Card>
+            <CopyBlock
+              text={curlCommand}
+              language="shell"
+              showLineNumbers={true}
+              startingLineNumber={1}
+              theme={dracula}
+              codeBlock={false}
+            />
           </Grid>
         </Grid>
       </Box>
