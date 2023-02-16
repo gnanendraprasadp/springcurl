@@ -1,14 +1,11 @@
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import { AppBar, Box, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import "./../css/data.css";
 
 function appbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar style={{ background: '#000000' }} position="sticky" elevation={0}>
+      <AppBar style={{ background: "#000000" }} position="sticky" elevation={0}>
         <Toolbar>
           <Typography variant="h4" className="appbar" sx={{ flexGrow: 1 }}>
             Spring cURL

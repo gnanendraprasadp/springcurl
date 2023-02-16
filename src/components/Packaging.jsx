@@ -1,9 +1,11 @@
-import FormControl from "@mui/material/FormControl";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormLabel from "@mui/material/FormLabel";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import client from "./../../asset/client.json";
+import {
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Radio,
+  RadioGroup,
+} from "@mui/material";
+import client from "./../asset/client.json";
 
 const Packaging = ({ packaging, setPackaging }) => {
   const packages = client.packaging.values;

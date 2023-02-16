@@ -1,16 +1,13 @@
-import { Box } from "@mui/material";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
+import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
-import Java from "./radiogroup/Java";
-import Language from "./radiogroup/Language";
-import OutputType from "./radiogroup/OutputType";
-import Packaging from "./radiogroup/Packaging";
-import Project from "./radiogroup/Project";
-import SpringBoot from "./radiogroup/SpringBoot";
-import TextInput from "./textfield/TextInput";
+import Dependencies from "./Dependencies";
+import Java from "./Java";
+import Language from "./Language";
+import OutputType from "./OutputType";
+import Packaging from "./Packaging";
+import Project from "./Project";
+import SpringBoot from "./SpringBoot";
+import TextInput from "./TextInput";
 
 function Main() {
   const [format, setFormat] = useState("zip");
@@ -23,7 +20,8 @@ function Main() {
   const [artifact, setArtifact] = useState("demo");
   const [name, setName] = useState("demo");
   const [description, setDescription] = useState("Spring Boot by cURL");
-  const [packageName, setpackageName] = useState("com.example.demo");
+  const [packageName, setPackageName] = useState("com.example.demo");
+  const [dependency, setDependency] = useState("");
 
   return (
     <>
@@ -66,9 +64,14 @@ function Main() {
             <TextInput
               label="Package name"
               value={packageName}
-              onChange={(event) => setpackageName(event.target.value)}
+              onChange={(event) => setPackageName(event.target.value)}
             />
 
+            <Dependencies
+              label="Dependencies"
+              dependency={dependency}
+              setDependency={setDependency}
+            />
           </Grid>
 
           <Grid xs={12} md={12} lg={12}>
@@ -93,7 +96,7 @@ function Main() {
                     : "https://start.spring.io/starter.tgz"}{" "}
                   -d type={project} -d language={language} -d packaging=
                   {packaging} -d bootVersion={springboot} -d javaVersion={java}{" "}
-                  -d artifactId={artifact} -d dependencies=web,data-jpa -d
+                  -d artifactId={artifact} -d dependencies={dependency} -d
                   description=
                   {encodeURIComponent(description.trim())} -d groupId=
                   {group} -d name={name} -d packageName={packageName}{" "}

@@ -1,12 +1,12 @@
-import TextField from "@mui/material/TextField";
-import "./../../css/data.css";
+import { TextField } from "@mui/material";
+import "./../css/data.css";
 
 const TextInput = ({ label, value, onChange }) => {
   return (
     <>
       <TextField
         fullWidth
-        color="success"
+        style={{ color: "#000" }}
         id="outlined-basic"
         label={label}
         variant="outlined"

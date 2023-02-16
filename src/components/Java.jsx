@@ -1,9 +1,11 @@
-import FormControl from "@mui/material/FormControl";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormLabel from "@mui/material/FormLabel";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import client from "./../../asset/client.json";
+import {
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Radio,
+  RadioGroup,
+} from "@mui/material";
+import client from "../asset/client.json";
 
 const Java = ({ java, setJava }) => {
   const javaVer = client.javaVersion.values;
@@ -11,7 +13,11 @@ const Java = ({ java, setJava }) => {
   return (
     <>
       <FormControl>
-        <FormLabel id="java-radio-button-group" focused={true} style={{color:"#000"}}>
+        <FormLabel
+          id="java-radio-button-group"
+          focused={true}
+          style={{ color: "#000" }}
+        >
           Java
         </FormLabel>
         <RadioGroup
@@ -25,7 +31,7 @@ const Java = ({ java, setJava }) => {
             <FormControlLabel
               key={index}
               value={data.id}
-              control={<Radio  style={{color:"#000"}}/>}
+              control={<Radio style={{ color: "#000" }} />}
               label={data.name}
             />
           ))}
