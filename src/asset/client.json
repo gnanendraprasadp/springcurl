@@ -1601,10 +1601,30 @@
   },
   "bootVersion": {
     "values": [
-      { "id": "3.0.3-SNAPSHOT", "name": "3.0.3 (SNAPSHOT)" },
-      { "id": "3.0.2", "name": "3.0.2" },
-      { "id": "2.7.9-SNAPSHOT", "name": "2.7.9 (SNAPSHOT)" },
-      { "id": "2.7.8", "name": "2.7.8" }
+      {
+        "id": "3.1.0.BUILD-SNAPSHOT",
+        "name": "3.1.0 (SNAPSHOT)"
+      },
+      {
+        "id": "3.1.0.M1",
+        "name": "3.1.0 (M1)"
+      },
+      {
+        "id": "3.0.4.BUILD-SNAPSHOT",
+        "name": "3.0.4 (SNAPSHOT)"
+      },
+      {
+        "id": "3.0.3.RELEASE",
+        "name": "3.0.3"
+      },
+      {
+        "id": "2.7.10.BUILD-SNAPSHOT",
+        "name": "2.7.10 (SNAPSHOT)"
+      },
+      {
+        "id": "2.7.9.RELEASE",
+        "name": "2.7.9"
+      }
     ]
   }
 }
