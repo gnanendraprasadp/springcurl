@@ -120,7 +120,6 @@ function Main() {
             <Typography variant="p" style={{ fontWeight: "bold" }} gutterBottom>
               Your cURL Command is
             </Typography>
-            <br />
 
             <CopyBlock
               text={curlCommand}
