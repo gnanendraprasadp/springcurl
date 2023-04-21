@@ -1586,7 +1586,7 @@
   },
   "javaVersion": {
     "values": [
-      { "id": "19", "name": "19" },
+      { "id": "20", "name": "20" },
       { "id": "17", "name": "17" },
       { "id": "11", "name": "11" },
       { "id": "1.8", "name": "8" }
@@ -1606,24 +1606,24 @@
         "name": "3.1.0 (SNAPSHOT)"
       },
       {
-        "id": "3.1.0.M1",
-        "name": "3.1.0 (M1)"
+        "id": "3.1.0.M2",
+        "name": "3.1.0 (M2)"
       },
       {
-        "id": "3.0.4.BUILD-SNAPSHOT",
-        "name": "3.0.4 (SNAPSHOT)"
+        "id": "3.0.7.BUILD-SNAPSHOT",
+        "name": "3.0.7 (SNAPSHOT)"
       },
       {
-        "id": "3.0.3.RELEASE",
-        "name": "3.0.3"
+        "id": "3.0.6.RELEASE",
+        "name": "3.0.6"
       },
       {
-        "id": "2.7.10.BUILD-SNAPSHOT",
-        "name": "2.7.10 (SNAPSHOT)"
+        "id": "2.7.12.BUILD-SNAPSHOT",
+        "name": "2.7.12 (SNAPSHOT)"
       },
       {
-        "id": "2.7.9.RELEASE",
-        "name": "2.7.9"
+        "id": "2.7.11.RELEASE",
+        "name": "2.7.11"
       }
     ]
   }

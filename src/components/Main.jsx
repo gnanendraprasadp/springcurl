@@ -14,7 +14,7 @@ function Main() {
   const [format, setFormat] = useState("zip");
   const [project, setProject] = useState("gradle-project *");
   const [language, setLanguage] = useState("java");
-  const [springboot, setSpringboot] = useState("3.0.3");
+  const [springboot, setSpringboot] = useState("3.0.6.RELEASE");
   const [packaging, setPackaging] = useState("jar");
   const [java, setJava] = useState("17");
   const [group, setGroup] = useState("com.example");
