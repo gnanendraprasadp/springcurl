@@ -1,14 +1,14 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
-import Dependencies from "../Fields/Dependencies";
-import Java from "./../Fields/Java";
-import Language from "./../Fields/Language";
-import OutputType from "./../Fields/OutputType";
-import Packaging from "./../Fields/Packaging";
-import Project from "./../Fields/Project";
-import SpringBoot from "./../Fields/SpringBoot";
-import TextInput from "./../Fields/TextInput";
+import Dependencies from "../fields/Dependencies";
+import Java from "./../fields/Java";
+import Language from "./../fields/Language";
+import OutputType from "./../fields/OutputType";
+import Packaging from "./../fields/Packaging";
+import Project from "./../fields/Project";
+import SpringBoot from "./../fields/SpringBoot";
+import TextInput from "./../fields/TextInput";
 import client from "../asset/client.json";
 
 function Main() {
