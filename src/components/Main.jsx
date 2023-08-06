@@ -1,22 +1,23 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
-import Dependencies from "./Dependencies";
-import Java from "./Java";
-import Language from "./Language";
-import OutputType from "./OutputType";
-import Packaging from "./Packaging";
-import Project from "./Project";
-import SpringBoot from "./SpringBoot";
-import TextInput from "./TextInput";
+import Dependencies from "../Fields/Dependencies";
+import Java from "./../Fields/Java";
+import Language from "./../Fields/Language";
+import OutputType from "./../Fields/OutputType";
+import Packaging from "./../Fields/Packaging";
+import Project from "./../Fields/Project";
+import SpringBoot from "./../Fields/SpringBoot";
+import TextInput from "./../Fields/TextInput";
+import client from "../asset/client.json";
 
 function Main() {
-  const [format, setFormat] = useState("zip");
-  const [project, setProject] = useState("gradle-project *");
-  const [language, setLanguage] = useState("java");
-  const [springboot, setSpringboot] = useState("3.0.6.RELEASE");
-  const [packaging, setPackaging] = useState("jar");
-  const [java, setJava] = useState("17");
+  const [format, setFormat] = useState(client.outputType.default);
+  const [project, setProject] = useState(client.projectType.default);
+  const [language, setLanguage] = useState(client.language.default);
+  const [springboot, setSpringboot] = useState(client.bootVersion.default);
+  const [packaging, setPackaging] = useState(client.packaging.default);
+  const [java, setJava] = useState(client.javaVersion.default);
   const [group, setGroup] = useState("com.example");
   const [artifact, setArtifact] = useState("demo");
   const [name, setName] = useState("demo");
